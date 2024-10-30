@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; color: #333; background-color: #f5f5f5; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        header, .section { padding: 40px 20px; }
+        header { text-align: center; background: #282c34; color: #fff; padding: 60px 20px; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; }
+        nav { margin-top: 20px; }
+        nav a { color: #61dafb; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        #about { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+        #about .text { max-width: 600px; }
+        #about h2 { color: #282c34; font-size: 2em; margin-bottom: 10px; }
+        #about p { font-size: 1.1em; color: #555; }
+        #projects { background: #e8e8e8; }
+        .project { background: #fff; margin: 20px 0; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .project h3 { font-size: 1.5em; color: #282c34; }
+        .project p { color: #555; }
+        .project img { width: 100%; height: auto; border-radius: 10px; margin-top: 10px; }
+        .btn { background: #61dafb; color: #fff; padding: 10px 20px; text-align: center; display: inline-block; margin-top: 10px; border-radius: 5px; text-decoration: none; }
+        .btn:hover { background: #52b4d3; }
+        #skills { background: #282c34; color: #fff; }
+        .skill { display: inline-block; width: 30%; margin: 10px 5px; padding: 10px; background: #333; text-align: center; border-radius: 5px; }
+        #contact { background: #f0f0f0; text-align: center; }
+        form { display: flex; flex-direction: column; align-items: center; }
+        input, textarea { width: 80%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ddd; }
+        button { background: #282c34; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #333; }
+        @media (max-width: 768px) {
+            #about { flex-direction: column; text-align: center; }
+            .skill { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Your Name</h1>
+        <p>Front-End Developer | Designer | Coder</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about" class="section">
+        <div class="text">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate web developer with a knack for design and a love for coding. My focus is on creating beautiful, functional, and responsive websites. I have a strong foundation in HTML, CSS, and JavaScript, and I’m always learning new techniques to improve my skills.</p>
+        </div>
+    </section>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project One</h3>
+            <p>A beautiful landing page built with responsive design principles.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Project One Screenshot">
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project Two</h3>
+            <p>An e-commerce website with a custom shopping cart and checkout experience.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Project Two Screenshot">
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project Three</h3>
+            <p>A portfolio website showcasing my work in a unique and creative way.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Project Three Screenshot">
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </section>
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Photoshop</div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</div>
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.querySelector("input[type='text']").value;
+        const email = document.querySelector("input[type='email']").value;
+        const message = document.querySelector("textarea").value;
+        if (name && email && message) {
+            alert("Thank you, " + name + "! Your message has been sent.");
+        } else {
+            alert("Please fill out all fields.");
+        }
+    });
+    document.querySelectorAll("nav a").forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+</script>
+</body>
+</html>
